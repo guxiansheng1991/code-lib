@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.5/css/swiper.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+      }
+      .box-carimage {
+        width: 100%;
+        height: auto;
+      }
+      .swiper-container-carimage {
+        width: 100%;
+        height: 200px;
+      }
+      .swiper-container-carimage .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-container-carimage .swiper-wrapper .swiper-slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .swiper-container-carimage .swiper-wrapper .swiper-slide .img {
+        width: 90%;
+        height: 90%;
+        transition: all 0.3s;
+      }
+      .swiper-container-carimage .swiper-wrapper .carimage-slide-active .img {
+        transform: scale(1.22);
+        transition: all 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-carimage">
+      <div class="swiper-container-carimage">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              class="img"
+              src="https://paio-cdn.visitshanghai.com.cn/domestic/picture/2021/05/12/2B53A728-5386-44F0-A21E-6EF602827AA0-1620785451331.jpg?ysh_isneedcache=1&imageMogr2/thumbnail/1500x&x-oss-process=image/resize,w_1500/quality,q_80"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="img"
+              src="https://paio-cdn.visitshanghai.com.cn/domestic/picture/2021/03/04/84BC831D-74BE-4FC5-B9D3-CDD357EB9B35-1614842880870.jpg?ysh_isneedcache=1&imageMogr2/thumbnail/1500x&x-oss-process=image/resize,w_1500/quality,q_80"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="img"
+              src="https://paio-cdn.visitshanghai.com.cn/domestic/picture/2020/10/12/54CFF8C5-77C9-4FAE-922E-A414B438C161-1602486404704.jpg?ysh_isneedcache=1&imageMogr2/thumbnail/1500x&x-oss-process=image/resize,w_1500/quality,q_80"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+  <script>
+    /** 初始化swiper */
+    function initSwiperCarImage() {
+      var mySwiper = new Swiper(".swiper-container-carimage", {
+        //autoplay: true, //可选选项，自动滑动
+        loop: true,
+        initialSlide: 2,
+        slidesPerView: 1.2,
+        slidesOffsetBefore: 30,
+        slideActiveClass: "carimage-slide-active",
+        on: {
+          slideChange: function () {
+            console.log(this);
+          },
+        },
+      });
+    }
+    /** 页面执行入口 */
+    $(function () {
+      initSwiperCarImage();
+    });
+  </script>
+</html>
